@@ -1,70 +1,75 @@
 # Literature Manager
 
-![Java](https://img.shields.io/badge/Java-Backend-ED8B00?logo=openjdk&logoColor=white)
-![Maven](https://img.shields.io/badge/Maven-Build-C71A36?logo=apachemaven&logoColor=white)
-![API](https://img.shields.io/badge/Gutendex-API-2563eb)
-![JSON](https://img.shields.io/badge/JSON-Gson-111827)
+![stack: Java](https://img.shields.io/badge/stack--Java-0d9488?style=flat-square) ![stack: Maven](https://img.shields.io/badge/stack--Maven-0d9488?style=flat-square) ![stack: Gson](https://img.shields.io/badge/stack--Gson-0d9488?style=flat-square) ![stack: Gutendex API](https://img.shields.io/badge/stack--Gutendex%20API-0d9488?style=flat-square) ![IA: asistido](https://img.shields.io/badge/IA--asistido-6366f1?style=flat-square)
 
-Aplicación Java para **gestión de libros y consulta de literatura en línea**. Combina operaciones CRUD en memoria con integración a la API pública de Gutendex para buscar obras y autores.
+Gestor de libros que combina un catalogo local con la busqueda en linea de obras y autores mediante la API publica Gutendex.
 
-## Funcionalidades
+**Tipo:** Aplicacion de consola (Java) · **Complejidad:** Intermedio
 
-- Registrar libros con título, autor y año.
-- Listar catálogo local.
-- Editar registros existentes.
-- Eliminar libros por identificador.
-- Buscar libros en línea mediante Gutendex.
-- Procesar respuestas JSON con Gson.
-- Interfaz interactiva por consola.
+## Problema que resuelve
 
-## Tecnologías
+Reunir en un solo flujo el registro de libros propios y la consulta de un catalogo externo sin salir de la terminal.
+
+## Solucion implementada
+
+Aplicacion Java con operaciones CRUD en memoria y un cliente HTTP que consulta Gutendex y procesa las respuestas JSON con Gson.
+
+### Funcionalidades principales
+
+- Alta, listado, edicion y borrado de libros
+- Busqueda en linea en la API Gutendex
+- Parseo de JSON con Gson
+- Menu interactivo por consola
+
+## Stack
 
 - Java
 - Maven
 - Gson
-- `HttpURLConnection`
 - Gutendex API
 
-## Arquitectura simplificada
+## Estructura
 
-```text
-LiteratureManager
-├── Book                # Modelo de dominio
-├── BookController      # Lógica de gestión
-├── CRUD local          # Alta, listado, edición y eliminación
-└── Gutendex API        # Búsqueda remota de literatura
+```
+demo/
+  src/main/java/com/example/demo/LiteratureManager.java
+  src/main/resources/application.properties
+  src/test/java/.../DemoApplicationTests.java
+  pom.xml
 ```
 
-## Ejecución
-
-El código principal se encuentra dentro de `demo/`.
+## Puesta en marcha
 
 ```bash
-git clone https://github.com/Luisf2020/DesafioLiteratura.git
-cd DesafioLiteratura/demo
+cd demo
 ./mvnw spring-boot:run
 ```
 
-En Windows:
+## Complejidad del proyecto
 
-```powershell
-mvnw.cmd spring-boot:run
-```
+**Nivel: Intermedio** — Integracion con una API externa, serializacion JSON y CRUD sobre modelo propio.
 
-## Competencias demostradas
+El nivel describe la complejidad tecnica del proyecto, no el grado de dominio de quien lo escribio.
 
-- Modelado básico orientado a objetos.
-- Consumo de APIs REST.
-- Procesamiento JSON.
-- Operaciones CRUD.
-- Gestión de dependencias con Maven.
-- Manejo de errores en integración HTTP.
+## Despliegue
+
+Aplicacion de consola; no genera una pagina web.  
+El codigo fuente esta disponible en este repositorio.
+
+## Transparencia sobre IA
+
+Este proyecto se desarrollo con asistencia de inteligencia artificial (generacion de codigo,
+revision y documentacion). El codigo fue leido, ejecutado y probado manualmente. No se declaran
+clientes, metricas ni resultados que no puedan verificarse.
 
 ## Autor
 
-**Luis Felipe Zuniga León**  
-Ingeniería de Sistemas · Desarrollo de Software · Full Stack
+**Luis Felipe Zuniga Leon** — Desarrollador de software asistido por IA
+
+- GitHub: <https://github.com/Luisf2020>
+- Correo: developerluis2@gmail.com
+- WhatsApp: +504 3237 0056
 
 ---
 
-Proyecto de portafolio y formación técnica en Java e integración de APIs.
+_Proyecto de portafolio. El desarrollo se apoyo en herramientas de IA bajo revision tecnica humana._
